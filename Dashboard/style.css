@@ -121,8 +121,6 @@ body{
 .notificationBtn, .profileBtn{
     padding: 5px 10px 2px 10px;
     border-radius: 100%;
-    font-family: 'Macondo', cursive;
-    font-weight: bold;
     color: var(--secondary-Color);
     border: none;
     background-color: var(--bg-Theme-Light);
@@ -195,7 +193,7 @@ body{
     text-decoration: none;
     color: var(--text-Color-Dark);
     /* background-color: darkseagreen; */
-    padding: 15px 20px;
+    padding: 10px 20px;
     font-size: 1rem;
     font-family: 'Varela Round', sans-serif;
     font-weight: 600;
@@ -203,19 +201,18 @@ body{
     align-items: center;
     border-radius: 10px;
 }
-.navLinks p{
-    font-size: 1.9em;
-    padding: 0px !important;
-    /* background-color: darkcyan; */
-    line-height: 1em !important;
-    margin-top: 2px !important;
-}
 .navLinks i{
     width: 40px;
     font-size: 2em;
     line-height: 1em !important;
     color: rgba(34, 226, 162, 0.8);
     /* background-color: darkgoldenrod; */
+}
+.navLinks p{
+    font-size: 1.8em;
+    padding: 0px !important;
+    /* background-color: darkcyan; */
+    line-height: 1.6em !important;
 }
 .navLinks:hover{
     background-color: rgba(34, 226, 162, 0.2);
@@ -325,7 +322,7 @@ body{
     font-size: 1.7rem;
     font-weight: 600;
     font-family: 'Tsukimi Rounded', sans-serif;
-    background-color: var(--primary-Color);
+    background-color: rgba(34, 226, 162, 0.8);
     color: var(--text-Color-Light);
 }
 .posting .lowerSection{
