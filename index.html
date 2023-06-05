@@ -26,7 +26,7 @@
     <!-- Main Body Container -->
     <div id="main" class="container-fluid g-0 p-0">
 
-        <!-- Login Form -->
+        <!---------------- Login Form ---------------->
         <form class="loginForm">
             <!-- Login Form Header -->
             <div class="formHeader">
@@ -43,38 +43,38 @@
                 <!-- For Email or Mobile Number Input -->
                 <label for="email/phoneNumber">Email or Phone Number</label>
                 <div class="inputType">
-                    <input type="text" id="emailOrPhone" name="email/phoneNumber" placeholder="Email Address or Phone Number" required>
+                    <input type="text" id="loginEmailOrPhone" name="email/phoneNumber" placeholder="Email Address or Phone Number" required>
                 </div>
+                <!-- Email Message -->
+                <p class="emailMessage m-0 hide">Please enter an email address or phone number</p>
                 
                 <!-- For Password Input -->
                 <label for="password">Password</label>
                 <div class="inputType">
-                    <input type="password" id="logInPassword" name="password" placeholder="Password" required>
+                    <input type="password" id="loginPassword" name="password" placeholder="Password" required>
                     <span class="checkeye">
                         <i class="fa-solid fa-eye-slash" aria-hidden="true" class="eyeBtn" onclick="toggleEyeBtn(this)"></i>
                     </span>
                 </div>
+                <!-- Password Message -->
+                <p class="passwordMessage m-0 hide">Please enter a password.</p>
                 
                 <!-- For Login Button -->
-                <button type="submit" class="logInBtn">Log in</button>
+                <button type="button" class="logInBtn">Log in</button>
 
                 <!-- For Forget Button -->
                 <button type="button" class="forgetPassBtn">Forgotten Password?</button>
                 
                 <!-- For Account Creation Link -->
-                <span class="creationAccount">Don't have an account? <a href="#" class="createAccountLink">Create Account</a></span>
+                <span class="creationAccount">Don't have an account? <a class="createAccountLink" onclick="openCreateAccountModal()">Create Account</a></span>
             </fieldset>
         </form>
 
 
-        <!-- Overlay Signup -->
-        <div class="overlay_Signup"></div>
-
-
-        <!-- Create Account Modal -->
+        <!---------------- Create Account Modal ---------------->
         <div class="createAccountModal">
             <!-- For Cancel Button -->
-            <button type="button" class="cancelBtn">
+            <button type="button" class="cancelBtn" onclick="closeCreateAccountModal()">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <!-- For Signup Header -->
@@ -100,12 +100,12 @@
                 
                 <!-- For Email Input -->
                 <section class="forEmail">
-                    <input type="email" id="email" placeholder="Email Address" required>
+                    <input type="email" id="signupEmail" placeholder="Email Address" required>
                 </section>
 
                 <!-- For Phone Number Input -->
                 <section class="forPhone">
-                    <input type="number" id="phoneNumber" placeholder="Phone Number" required>
+                    <input type="number" id="signupPhoneNumber" placeholder="Phone Number" required>
                 </section>
 
                 <!-- For Password Inputs -->
@@ -117,7 +117,7 @@
                         </span>
                     </div>
                     <div class="signUpPass">
-                        <input type="password" id="confirmPassword" name="password" placeholder="Confirm Password" required>
+                        <input type="password" id="signupConfirmPassword" name="password" placeholder="Confirm Password" required>
                         <span class="checkeye">
                             <i class="fa-solid fa-eye-slash" aria-hidden="true" class="eyeBtn" onclick="toggleEyeBtn(this)"></i>
                         </span>
@@ -134,10 +134,10 @@
                 <section class="forGender">
                     <label for="gender">Gender ?</label>
                     <div class="gender">  
-                        <input class="checkMale" type="radio" name="gender" id="male" checked required>
+                        <input class="checkMale" type="radio" name="gender" value="male" id="male" checked>
                         <label for="male">Male</label>
 
-                        <input class="checkFemale" type="radio" name="gender" id="female" required>
+                        <input class="checkFemale" type="radio" name="gender" value="female" id="female">
                         <label for="female">Female</label>   
                     </div>
                 </section>

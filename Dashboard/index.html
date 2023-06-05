@@ -43,8 +43,16 @@
                     <i class="fa-solid fa-bell"></i>
                 </button>
                 <button type="button" class="profileBtn">
-                    <i class="fa-solid fa-user"></i>
+                    <div class="profileIconImg">
+                        <img src="../Assets/Avatar.jpg" alt="">
+                    </div>
                 </button>
+                <div class="profileBtnDropdown">
+                    <a href="#" class="accountLink profile">Profile</a>
+                    <a href="#" class="accountLink settings">Settings</a>
+                    <a href="#" class="accountLink logOut">Logout</a>
+                </div>
+
             </div>
 
         </div>   
@@ -54,7 +62,27 @@
     <div class="dashboard container-fluid g-0">
         <div class="dashboardRow row g-0">
 
-            <nav class="leftContent col-3">
+            <div class="leftContent col-3">
+                <div class="userDetails row g-0">
+                    <div class="userDP col-12 p-0">
+                        <p class="followers m-0"><span>0</span> followers</p>
+                        <p class="following m-0"><span>0</span> following</p>
+                    </div>
+
+                    <div class="userProfilePicture p-0">
+                        <img src="../Assets/Avatar.jpg" alt="User-Image">
+                    </div>
+
+                    <div class="aboutUser col-12 g-0">
+                        <h2 class="userName m-0"></h2>
+                        <h2 class="userEmail m-0"></h2>
+                        <p class="userDescription m-0"></p>
+                        <a href="#">
+                            <button type="button" class="viewProfile">View Profile</button>
+                        </a>
+                    </div>
+                </div>
+
                 <ul class="navigations p-0">
                     <li class="navItems">
                         <a href="#" class="navLinks">
@@ -111,18 +139,11 @@
                             <p class="m-0">Groups</p>
                         </a>
                     </li>
-
-                    <li class="navItems">
-                        <a href="#" class="navLinks">
-                            <i class="fa-solid fa-user"></i>
-                            <p class="m-0">Profile</p>
-                        </a>
-                    </li>
                 </ul>
 
                 <button type="button" class="postBtn">Create Post</button>
                 <button type="button" class="logOutBtn">Log out</button>
-            </nav>
+            </div>
 
             <div class="middleContent col-6">
                 <div class="postContent">
@@ -131,7 +152,7 @@
 
                         <div class="upperSection col-12">
                             <div class="userImg">
-                                <img src="../Assets/Avatar.jpg" alt="user-Image">
+                                <img src="../Assets/Avatar.jpg" alt="User-Image">
                             </div>
                             <div class="postInput">
                                 <input type="text" placeholder="What's on your mind, Nabeel ?">
@@ -139,7 +160,24 @@
                             <button class="postingBtn">Post</button>
                         </div>
 
-                        <div class="lowerSection col-12"></div>
+                        <div class="lowerSection col-12">
+                            <button type="button" class="postMediaBtn">
+                                <i class="fa-solid fa-image"></i>
+                                Photos
+                            </button>
+                            <button type="button" class="postMediaBtn">
+                                <i class="fa-solid fa-video"></i>
+                                Videos
+                            </button>
+                            <button type="button" class="postMediaBtn">
+                                <i class="fa-solid fa-icons"></i>
+                                Activity
+                            </button>
+                            <button type="button" class="postMediaBtn">
+                                <i class="fa-solid fa-newspaper"></i>
+                                Article
+                            </button>
+                        </div>
 
                     </div>
 
@@ -149,5 +187,9 @@
             <aside class="rightContent col-3"></aside>
         </div>
     </div>
+
+    <script src="app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
