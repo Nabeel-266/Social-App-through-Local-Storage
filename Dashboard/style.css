@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&family=Macondo&family=Poppins:wght@200;300;400;500;600;700;800&family=Sacramento&family=Tsukimi+Rounded:wght@300;400;500;600;700&family=Varela+Round&display=swap');
 
 :root{
-    --primary-Color: #22e2a2;
+    --primary-Color: #00e699;
     --secondary-Color: #666666;
     --bg-Theme-Light: #fafafa;
     --bg-Items-Light: #f5f5f5;
-    --text-Color-Dark: #505050;
+    --text-Color-Dark: #404040;
     --text-Color-Light: #ffffff;
 }
 
@@ -19,7 +19,22 @@ html{
 }
 body{
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
+
+::-webkit-scrollbar{
+    width: 10px;
+    position: absolute;
+}
+::-webkit-scrollbar-track{
+    background: rgba(230, 230, 230, 0.9);
+}
+::-webkit-scrollbar-thumb{
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
 
 #header{
     width: 100%;
@@ -27,6 +42,7 @@ body{
     background-color: rgba(230, 230, 230, 0.9);
     backdrop-filter: blur(10px);
     position: fixed;
+    z-index: 99;
     top: 0;
     left: 0;
     box-shadow: 0px 0px 8px 0px var(--secondary-Color);
@@ -138,10 +154,11 @@ body{
     padding: 0px;
     border-radius: 100px;
     border: none;
+    position: relative;
 }
 .profileBtn .profileIconImg{
     width: 34px;
-    height: 34px;
+    height: 33px;
     border-radius: 100%;
     overflow: hidden;
 }
@@ -153,29 +170,34 @@ body{
 .profileBtnDropdown{
     width: 150px;
     position: absolute;
-    top: 7.5vh;
-    right: 0;
-    z-index: 100 !important;
+    top: 130%;
+    right: -100%;
     background-color: rgba(100, 100, 100, 0.8);
     padding: 10px 0px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     border-radius: 4px;
 }
 .profileBtnDropdown .accountLink{
     width: 100%;
-    padding: 4px 10px;
+    padding: 4px 15px;
     color: var(--text-Color-Light);
     font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
+    text-align: start;
     text-decoration: none;
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .profileBtnDropdown .accountLink:hover{
     transition: 0.2s;
     background-color: rgba(230, 230, 230, 0.9);
     color: var(--text-Color-Dark);
 }
+
 
 /* For Dashboard */
 .dashboard{
@@ -188,6 +210,9 @@ body{
     /* background-color: #22e2a2; */
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
 }
 
 /* For Left-Content */
@@ -200,9 +225,9 @@ body{
     overflow: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 30px;
     position: fixed;
+    z-index: 1;
     left: 0px;
     bottom: 0px;
 }
@@ -225,7 +250,7 @@ body{
     border-radius: 10px;
     background-color: rgba(200, 200, 200, 0.4);
     position: relative;
-    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(80, 80, 80, 0.6);
 }
 
 .userDetails .userDP{
@@ -253,7 +278,7 @@ body{
     border-radius: 100%;
     overflow: hidden;
     position: absolute;
-    top: 25%;
+    top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 3px solid var(--text-Color-Dark)
@@ -264,7 +289,7 @@ body{
 }
 .userDetails .aboutUser{
     width: 100%;
-    padding: 40px 20px;
+    padding: 30px 20px;
     border-radius: 0px 0px 10px 10px;
     display: flex;
     flex-direction: column;
@@ -275,12 +300,12 @@ body{
 }
 .aboutUser h2{
     font-size: 1.5rem;
-    font-family: 'K2D', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .aboutUser h2:first-child{
     color: var(--text-Color-Dark);
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 .aboutUser p{
     text-align: center;
@@ -309,14 +334,23 @@ body{
 }
 
 /* For left Content - Navigations */
-.leftContent .navigations{
+.leftContent .nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.nav .navigations{
     width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding: 10px 0px !important;
     background-color: rgba(200, 200, 200, 0.2);
     border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(80, 80, 80, 0.6);
 }
 .navigations .navItems{
     width: 100%;
@@ -353,7 +387,7 @@ body{
     background-color: rgba(34, 226, 162, 0.2);
 }
 
-.postBtn{
+.createPostBtn{
     width: 80%;
     padding: 5px 0px;
     font-size: 2rem;
@@ -364,7 +398,7 @@ body{
     font-weight: bold;
     border-radius: 100px;
 }
-.postBtn:hover{
+.createPostBtn:hover{
     color: var(--secondary-Color);
     background-color: transparent;
     transition: 0.3s ease;
@@ -387,7 +421,8 @@ body{
     transition: 0.3s ease;
 }
 
-/* For Navigation Items (Middle-Content) */
+
+/* For Middle-Content */
 .middleContent{
     min-height: 92vh;
     /* background-color: lightsalmon; */
@@ -395,14 +430,12 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    /* background-color: lightblue; */
+    gap: 20px;
+    position: relative;
 }
-.middleContent .postContent{
-    width: 100%;
-    /* background-color: var(--secondary-Color); */
-}
-.postContent .posting{
+
+/* For Middle Content - Posting Area */
+.middleContent .posting{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -419,8 +452,8 @@ body{
     border-bottom: 1px solid #888888;
 }
 .upperSection .userImg{
-    width: 35px;
-    height: 35px;
+    width: 6.5%;
+    height: 75%;
     /* background-color: lightgreen; */
     border-radius: 100%;
     overflow: hidden;
@@ -429,11 +462,12 @@ body{
     width: 100%;
     object-fit: cover;
 }
-.upperSection .postInput{
-    width: 70%;
+.upperSection .postInputArea{
+    width: 90%;
     height: 100%;
+    /* background-color: #22e2a2; */
 }
-.postInput input{
+.postInputArea input{
     width: 100%;
     height: 100%;
     border: none;
@@ -444,20 +478,10 @@ body{
     padding: 0px 4px;
     background-color: transparent;
     color: var(--text-Color-Light);
+    cursor: pointer;
 }
-.postInput input::placeholder{
+.postInputArea input::placeholder{
     color: #dddddd;
-}
-.upperSection .postingBtn{
-    height: 75%;
-    border: none;
-    border-radius: 30px;
-    padding: 0px 30px;
-    font-size: 1.7rem;
-    font-weight: 600;
-    font-family: 'Tsukimi Rounded', sans-serif;
-    background-color: rgba(34, 226, 162, 0.8);
-    color: var(--text-Color-Light);
 }
 .posting .lowerSection{
     height: 6vh;
@@ -471,7 +495,7 @@ body{
     align-items: center;
     gap: 8px;
     padding: 4px 10px;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-family: 'Tsukimi Rounded', sans-serif;
     border: none;
     color: var(--text-Color-Light);
@@ -496,7 +520,167 @@ body{
     color: rgb(255, 187, 0);
 }
 
-/* For Navigation Items (Right-Content) */
+
+/* For Middle Content - Posts Section */
+.middleContent .postsArea{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+    padding: 10px 0px;
+    /* background-color: rgba(200, 200, 200, 0.1); */
+}
+.postsArea .post{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 0px 0px 0px;
+    border-radius: 8px;
+    background-color: rgba(200, 200, 200, 0.4);
+    position: relative;
+}
+.post .postSaveOrDeleteBtn{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 2.2rem;
+    color: var(--text-Color-Dark);
+}
+.post .postAuthorDetails{
+    width: 100%;
+    height: 60px;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+}
+.postAuthorDetails .authorImage{
+    width: 9%;
+    /* height: 80%; */
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: lightblue;
+}
+.authorImage img{
+    width: 100%;
+}
+.postAuthorDetails .authorDetail{
+    width: 90%;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-Color-Dark);
+    font-family: 'Poppins', sans-serif;
+    /* background-color: lightcoral; */
+}
+.authorDetail h3{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 2px !important;
+}
+.authorDetail h6{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.authorDetail p{
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--secondary-Color);
+}
+
+.post .postContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #22e2a2; */
+    border-top: 1px solid rgba(190, 190, 190);
+}
+.postContent .postTextArea{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-Color-Dark);
+    font-family: 'Poppins', sans-serif;
+    /* background-color: lightgoldenrodyellow; */
+}
+.postTextArea .postText{
+    font-size: 1.4rem;
+}
+.postContent .postImage{
+    width: 100%;
+    /* min-height: 300px; */
+    /* background-color: lightgreen; */
+    overflow: hidden;
+}
+.postImage img{
+    width: 100%;
+}
+.postContent .postInfo{
+    width: 100%;
+    padding: 6px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-Color-Dark);
+    font-family: 'Poppins', sans-serif;
+    /* background-color: lightgoldenrodyellow; */
+}
+.postInfo .postLikesView{
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.postInfo .postComments_Shares{
+    display: flex;
+    gap: 10px;
+}
+.postComments_Shares .postCommentsView{
+    font-size: 1.35rem;
+    cursor: pointer;
+}
+.postComments_Shares .postSharesView{
+    font-size: 1.35rem;
+    cursor: pointer;
+}
+.postCommentsView:hover, .postSharesView:hover{
+    text-decoration: underline;
+}
+.postContent .likeCommentShareBtns{
+    width: 96%;
+    padding: 6px 0px;
+    display: flex;
+    border-top: 1px solid rgba(190, 190, 190);
+}
+.likeCommentShareBtns .lkCmntShrBtn{
+    width: 33.3%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 6px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--text-Color-Dark);
+    border-radius: 4px;
+    /* background-color: lightcoral; */
+}
+.lkCmntShrBtn:hover{
+    transition: 0.1s;
+    background-color: rgb(200, 200, 200);
+}
+
+/* For Right Content */
 .rightContent{
     height: 92vh;
     max-height: 92vh;
@@ -509,9 +693,9 @@ body{
     align-items: center;
     gap: 10px;
     position: fixed;
+    z-index: 1;
     right: 0px;
     bottom: 0px;
-    z-index: 0 ;
 }
 .rightContent::-webkit-scrollbar{
     width: 8px;
@@ -524,4 +708,132 @@ body{
     background: var(--text-Color-Dark);
     border-radius: 12px;
     transition: all 0.3s ease;
+}
+
+
+/* For Overlay Content */
+#overlay{
+    /* display: none; */
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(2px);
+}
+
+/* For Middle Content - Posting Modal -  */
+.postingModal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 600px;
+    /* height: 400px; */
+    border-radius: 8px;
+    background-color: var(--bg-Theme-Light);
+    padding: 0px 20px 20px 20px;
+}
+.postingModal .createPostHeading{
+    width: 100%;
+    padding: 14px 0px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid var(--secondary-Color);
+}
+.createPostHeading h2{
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--text-Color-Dark);
+}
+.createPostHeading .closePostingModalBtn{
+    position: absolute;
+    right: 0px;
+    border: none;
+    padding: 0px 9px;
+    font-size: 2.2rem;
+    border-radius: 100%;
+    color: #eeeeee;
+    background-color: rgba(100, 100, 100, 0.9);
+}
+
+.postingModal .modalPostUser{
+    width: 100%;
+    /* background-color: lightpink; */
+    padding: 5px 0px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.modalPostUser .modalPostUserImage{
+    width: 8%;
+    height: 44px;
+    /* background-color: #22e2a2; */
+    overflow: hidden;
+    border-radius: 100%;
+    border: 2px solid var(--text-Color-Dark);
+}
+.modalPostUserImage img{
+    width: 100%;
+}
+.modalPostUser .modalPostUserName{
+    width: 90%;
+    /* background-color: #22e2a2; */
+}
+.modalPostUserName h3{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.modalPostUserName p{
+    font-size: 1.3rem;
+}
+
+.postingModal .modalPostTextarea{
+    width: 100%;
+    padding: 10px 0px;
+}
+.modalPostTextarea .post_Textarea{
+    width: 100%;
+    min-height: 200px;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.6rem;
+    border-radius: 6px;
+}
+
+.postingModal .postingBtn{
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 0px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--text-Color-Dark);
+    color: var(--text-Color-Light);
+}
+.postingBtn:hover{
+    transition: 0.2s;
+    color: var(--text-Color-Dark);
+    background-color: var(--primary-Color);
+}
+
+
+
+
+.hide{
+    display: none;
 }
