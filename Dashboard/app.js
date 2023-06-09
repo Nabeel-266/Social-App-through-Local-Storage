@@ -30,10 +30,13 @@ const userName = document.querySelector('.userName');
 const userEmail = document.querySelector('.userEmail');
 const userPhone = document.querySelector('.userPhone');
 const userDescription = document.querySelector('.userDescription');
-
+const modalUserName = document.querySelector('.modalUserName');
+const postInput = document.querySelector('.postInput');
 
 userName.innerHTML = `${Login_User.firstName} ${Login_User.lastName}`;
 userEmail.innerHTML = `${Login_User.emailAddress}`;
+modalUserName.innerHTML = `${Login_User.firstName} ${Login_User.lastName}`;
+postInput.placeholder = `What's on your mind, ${Login_User.firstName} ${Login_User.lastName}?`;
 
 if(Login_User.description){
     userDescription.innerHTML = Login_User.description;
