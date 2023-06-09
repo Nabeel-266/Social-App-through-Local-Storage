@@ -37,8 +37,6 @@
             </div>
 
             <div class="account col-4">
-                <!-- <button type="button" class="logInBtn">Log in</button>
-                <button type="button" class="signUpBtn">Sign up</button> -->
                 <button type="button" class="notificationBtn">
                     <i class="fa-solid fa-bell"></i>
                 </button>
@@ -47,7 +45,7 @@
                         <img src="../Assets/Avatar.jpg" alt="">
                     </div>
                     <div class="profileBtnDropdown hide">
-                        <a href="#" class="accountLink profile">
+                        <a href="../Profile/index.html" class="accountLink profile">
                             <i class="fa-solid fa-user"></i>
                             Profile
                         </a>
@@ -71,6 +69,7 @@
     <div class="dashboard container-fluid g-0">
         <div class="dashboardRow row g-0">
 
+            <!-- For Left-Content -->
             <div class="leftContent col-3">
                 <!-- For User Details Section in Left Content -->
                 <section class="userDetails row g-0">
@@ -87,7 +86,7 @@
                         <h2 class="userName m-0"></h2>
                         <h2 class="userEmail m-0"></h2>
                         <p class="userDescription m-0"></p>
-                        <a href="#">
+                        <a href="../Profile/index.html">
                             <button type="button" class="viewProfile">View Profile</button>
                         </a>
                     </div>
@@ -97,7 +96,7 @@
                 <nav class="nav">
                     <ul class="navigations p-0">
                         <li class="navItems">
-                            <a href="#" class="navLinks">
+                            <a href="./index.html" class="navLinks">
                                 <i class="fa-solid fa-house"></i>
                                 <p class="m-0">Home</p>
                             </a>
@@ -158,6 +157,7 @@
                 </nav>
             </div>
 
+            <!-- For Middle-Content -->
             <div class="middleContent col-6">
 
                 <!-- For Posting Area in Middle Content -->
@@ -252,11 +252,166 @@
                 </section>
             </div>
 
-            <div class="rightContent col-3"></div>
+            <!-- For Right-Content -->
+            <div class="rightContent col-3">
+                <!-- For Messages Area -->
+                <section class="messagesArea">
+                    <div class="messageHeading">
+                        <h4 class="m-0">Messages</h4>
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </div>
+
+                    <div class="searchMessage">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="search_Messages" placeholder="Search Messages">
+                    </div>
+
+                    <div class="msgs_area">
+                        <div class="message">
+                            <div class="msgUserImage">
+                                <img src="../Assets/pp1.jpg" alt="Message-User" class="img-fluid">
+                            </div>
+                            <div class="msgUserText">
+                                <h3 class="m-0">Hamza Ibad</h3>
+                                <p class="m-0">Hey! where are you bro.</p>
+                            </div>
+                        </div>
+
+                        <div class="message">
+                            <div class="msgUserImage">
+                                <img src="../Assets/pp3.jpg" alt="Message-User" class="img-fluid">
+                            </div>
+                            <div class="msgUserText">
+                                <h3 class="m-0">Zakir Khan</h3>
+                                <p class="m-0">Hey! where are you bro.</p>
+                            </div>
+                        </div>
+
+                        <div class="message">
+                            <div class="msgUserImage">
+                                <img src="../Assets/pp2.jpg" alt="Message-User">
+                            </div>
+                            <div class="msgUserText">
+                                <h3 class="m-0">Sehrish Awaan</h3>
+                                <p class="m-0">Hey! where are you bro.</p>
+                            </div>
+                        </div>
+
+                        <div class="message">
+                            <div class="msgUserImage">
+                                <img src="../Assets/pp4.jpg" alt="Message-User">
+                            </div>
+                            <div class="msgUserText">
+                                <h3 class="m-0">Muhammad Wasim</h3>
+                                <p class="m-0">Hey! where are you bro.</p>
+                            </div>
+                        </div>
+
+                        <div class="message">
+                            <div class="msgUserImage">
+                                <img src="../Assets/pp5.jpeg" alt="Message-User">
+                            </div>
+                            <div class="msgUserText">
+                                <h3 class="m-0">Sufiyan Ahmed</h3>
+                                <p class="m-0">Hey! where are you bro.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="requestsArea">
+                    <div class="requestHeading">
+                        <h4 class="m-0">Requests</h4>
+                    </div>
+
+                    <div class="rqst_Area">
+                        <div class="request">
+                            <div class="requestDetail">
+                                <div class="requestUserImage">
+                                    <img src="../Assets/pp4.jpg" alt="Message-User">
+                                </div>
+                                <div class="requestUserText">
+                                    <h3 class="m-0">Daniyal Zubair</h3>
+                                    <p class="m-0">8 mutual friends</p>
+                                </div>
+                            </div>
+                            <div class="requestButtons">
+                                <button class="acceptBtn rqstBtns">Accept</button>
+                                <button class="declineBtn rqstBtns">Decline</button>
+                            </div>
+                        </div>
+    
+                        <div class="request">
+                            <div class="requestDetail">
+                                <div class="requestUserImage">
+                                    <img src="../Assets/pp5.jpeg" alt="Message-User">
+                                </div>
+                                <div class="requestUserText">
+                                    <h3 class="m-0">Aijaz Muneer</h3>
+                                    <p class="m-0">12 mutual friends</p>
+                                </div>
+                            </div>
+                            <div class="requestButtons">
+                                <button class="acceptBtn rqstBtns">Accept</button>
+                                <button class="declineBtn rqstBtns">Decline</button>
+                            </div>
+                        </div>
+    
+                        <div class="request">
+                            <div class="requestDetail">
+                                <div class="requestUserImage">
+                                    <img src="../Assets/pp6.jpg" alt="Message-User">
+                                </div>
+                                <div class="requestUserText">
+                                    <h3 class="m-0">Saba Qureshi</h3>
+                                    <p class="m-0">27 mutual friends</p>
+                                </div>
+                            </div>
+                            <div class="requestButtons">
+                                <button class="acceptBtn rqstBtns">Accept</button>
+                                <button class="declineBtn rqstBtns">Decline</button>
+                            </div>
+                        </div>
+    
+                        <div class="request">
+                            <div class="requestDetail">
+                                <div class="requestUserImage">
+                                    <img src="../Assets/pp2.jpg" alt="Message-User">
+                                </div>
+                                <div class="requestUserText">
+                                    <h3 class="m-0">Amna Malik</h3>
+                                    <p class="m-0">14 mutual friends</p>
+                                </div>
+                            </div>
+                            <div class="requestButtons">
+                                <button class="acceptBtn rqstBtns">Accept</button>
+                                <button class="declineBtn rqstBtns">Decline</button>
+                            </div>
+                        </div>
+    
+                        <div class="request">
+                            <div class="requestDetail">
+                                <div class="requestUserImage">
+                                    <img src="../Assets/pp1.jpg" alt="Message-User">
+                                </div>
+                                <div class="requestUserText">
+                                    <h3 class="m-0">Sheraz Shah</h3>
+                                    <p class="m-0">6 mutual friends</p>
+                                </div>
+                            </div>
+                            <div class="requestButtons">
+                                <button class="acceptBtn rqstBtns">Accept</button>
+                                <button class="declineBtn rqstBtns">Decline</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 
-    <!-- For Overlay -->
+    <!-- For Overlay Content -->
     <div id="overlay" class="overlay hide">
         <!-- For Posting Modal -->
         <section class="postingModal hide">
@@ -279,6 +434,33 @@
 
             <div class="modalPostTextarea">
                 <textarea class="post_Textarea" placeholder="What do you want to talk about?"></textarea>
+                <div class="addEmoji">
+                    <span class="emoji">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="modalPostAssets">
+                <div class="addToPostText">
+                    <p class="m-0">Add to your Post</p>
+                </div>
+                <div class="addToAsset">
+                    <div class="addImage addMedia">
+                        <label for="input_Image"><i class="fa-solid fa-image"></i></label>
+                        <input type="file" accept=".jpg, .jpeg, .png" id="input_Image">
+                    </div>
+
+                    <div class="addVideo addMedia">
+                        <label for="input_Video"><i class="fa-solid fa-video"></i></label>
+                        <input type="file" accept=".mp4" id="input_Video">
+                    </div>
+
+                    <div class="addVideo addMedia">
+                        <label for="input_Gif"><i class='bx bxs-file-gif'></i></label>
+                        <input type="file" accept=".gif" id="input_Gif">
+                    </div>
+                </div>
             </div>
 
             <button class="postingBtn" onclick="postCreation()">Post</button>

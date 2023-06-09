@@ -2,10 +2,14 @@
 
 :root{
     --primary-Color: #00e699;
-    --secondary-Color: #666666;
-    --bg-Theme-Light: #fafafa;
-    --bg-Items-Light: #f5f5f5;
+    --secondary-Color: #999999;
+    --bg-Theme: #f5f5f5;
+    --bg-Items: #ffffff;
+    --bg-Items-Light: #e7e7e7;
+    --bg-Items-Dark: #494949;
+    --bg-Items-Opacity: rgba(255, 255, 255, 0.9);
     --text-Color-Dark: #404040;
+    --text-Color-Medium: #606060;
     --text-Color-Light: #ffffff;
 }
 
@@ -27,10 +31,10 @@ body{
     position: absolute;
 }
 ::-webkit-scrollbar-track{
-    background: rgba(230, 230, 230, 0.9);
+    background: var(--bg-Theme);
 }
 ::-webkit-scrollbar-thumb{
-    background: rgba(20, 20, 20, 0.9);
+    background: var(--text-Color-Dark);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
@@ -39,7 +43,7 @@ body{
 #header{
     width: 100%;
     height: 8vh;
-    background-color: rgba(230, 230, 230, 0.9);
+    background-color: var(--bg-Items-Opacity);
     backdrop-filter: blur(10px);
     position: fixed;
     z-index: 99;
@@ -63,14 +67,14 @@ body{
     font-size: 2.4rem;
     margin-bottom: 6px;
     color: var(--primary-Color);
-    text-shadow: 1px 1px 3px var(--secondary-Color);
+    text-shadow: 1px 1px 3px var(--text-Color-Medium);
 }
 .logo h2{
     font-family: 'Macondo', cursive;
     font-weight: bold;
     font-size: 3rem;
     margin-top: 3px !important;
-    color: var(--secondary-Color);
+    color: var(--text-Color-Medium);
 }
 
 .search{
@@ -88,7 +92,7 @@ body{
     align-items: center;
     gap: 5px;
     overflow: hidden;
-    border: 2px solid var(--bg-Theme-Light);
+    border: 2px solid var(--bg-Items);
 }
 .searchBar i{
     font-weight: bold;
@@ -104,10 +108,11 @@ body{
     background-color: transparent;
     font-size: 1.6rem;
     font-family: 'Varela Round', sans-serif;
+    color: var(--text-Color-Dark);
 }
 .searchBar:has(input:focus){
     border: 2px solid var(--primary-Color);
-    background-color: var(--bg-Theme-Light);
+    background-color: transparent;
 }
 
 .account{
@@ -121,43 +126,36 @@ body{
 .account button{
     outline: none;
 }
-/* .logInBtn, .signUpBtn{
-    padding: 2px 10px;
-    border-radius: 100px;
-    font-family: 'Macondo', cursive;
-    font-weight: bold;
-    color: var(--primary-Color);
-    border: 2px solid var(--primary-Color);
-    background-color: transparent;
-}
-.logInBtn:hover, .signUpBtn:hover{
-    color: var(--bg-Theme-Light);
-    background-color: var(--primary-Color);
-    transition: 0.3s;
-} */
-.notificationBtn{
+
+.account .notificationBtn{
     padding: 5px 10px 2px 10px;
     border-radius: 100%;
-    color: var(--secondary-Color);
+    color: var(--text-Color-Medium);
     border: none;
-    background-color: var(--bg-Theme-Light);
+    background-color: var(--bg-Items-Light);
     font-size: 1.7rem;
     box-shadow: 0px 0px 5px #dddddd;
 }
 .notificationBtn:hover{
-    background-color: var(--bg-Items-Light);
-    box-shadow: 0px 0px 5px #bbbbbb;
     transition: 0.3s ease;
+    color: var(--bg-Items);
+    background-color: var(--bg-Items-Dark);
+    box-shadow: 0px 0px 5px var(--bg-Items-Dark);
 }
 
-.profileBtn{
+.account .profileBtn{
     padding: 0px;
     border-radius: 100px;
     border: none;
     position: relative;
+    box-shadow: 0px 0px 5px var(--bg-Items-Light);
+}
+.profileBtn:hover{
+    transition: 0.3s ease;
+    box-shadow: 0px 0px 5px var(--secondary-Color);
 }
 .profileBtn .profileIconImg{
-    width: 34px;
+    width: 35px;
     height: 33px;
     border-radius: 100%;
     overflow: hidden;
@@ -172,7 +170,7 @@ body{
     position: absolute;
     top: 130%;
     right: -100%;
-    background-color: rgba(100, 100, 100, 0.8);
+    background-color: var(--bg-Items-Dark);
     padding: 10px 0px;
     display: flex;
     flex-direction: column;
@@ -181,7 +179,7 @@ body{
 }
 .profileBtnDropdown .accountLink{
     width: 100%;
-    padding: 4px 15px;
+    padding: 6px 15px;
     color: var(--text-Color-Light);
     font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
@@ -194,7 +192,7 @@ body{
 }
 .profileBtnDropdown .accountLink:hover{
     transition: 0.2s;
-    background-color: rgba(230, 230, 230, 0.9);
+    background-color: var(--primary-Color);
     color: var(--text-Color-Dark);
 }
 
@@ -202,7 +200,7 @@ body{
 /* For Dashboard */
 .dashboard{
     width: 100%;
-    background-color: var(--bg-Theme-Light);
+    background-color: var(--bg-Theme);
     padding-top: 8vh;
 }
 .dashboardRow{
@@ -221,7 +219,7 @@ body{
     max-height: 92vh;
     /* background-color: lightsalmon; */
     padding: 20px 20px !important;
-    border-right: 2px solid var(--secondary-Color);
+    border-right: 2px solid var(--bg-Items-Dark);
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -236,10 +234,10 @@ body{
     position: absolute;
 }
 .leftContent::-webkit-scrollbar-track{
-    background: var(--bg-Items-Light);
+    background: var(--bg-Theme);
 }
 .leftContent::-webkit-scrollbar-thumb{
-    background: var(--text-Color-Dark);
+    background: var(--bg-Items-Dark);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
@@ -248,7 +246,7 @@ body{
 .leftContent .userDetails{
     width: 100%;
     border-radius: 10px;
-    background-color: rgba(200, 200, 200, 0.4);
+    background-color: var(--bg-Items);
     position: relative;
     box-shadow: 0px 0px 10px rgba(80, 80, 80, 0.6);
 }
@@ -256,9 +254,9 @@ body{
 .userDetails .userDP{
     width: 100%;
     height: 10vh;
-    background-color: var(--text-Color-Dark);
+    background-color: var(--bg-Items-Dark);
     border-radius: 10px 10px 0px 0px;
-    padding: 0px 15px !important;
+    padding: 2px 15px !important;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -297,6 +295,7 @@ body{
     justify-content: center;
     gap: 2px;
     position: relative;
+    /* background-color: #00e699; */
 }
 .aboutUser h2{
     font-size: 1.5rem;
@@ -314,9 +313,9 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 .aboutUser .viewProfile{
-    border: 2px solid var(--text-Color-Dark);
+    border: 2px solid var(--bg-Items-Dark);
     outline: none;
-    background-color: var(--text-Color-Dark);
+    background-color: var(--bg-Items-Dark);
     color: var(--text-Color-Light);
     font-size: 1.5rem;
     font-family: 'Poppins', sans-serif;
@@ -330,7 +329,7 @@ body{
 .viewProfile:hover{
     transition: 0.3s;
     background-color: var(--primary-Color);
-    color: var(--text-Color-Dark);
+    color: var(--bg-Items-Dark);
 }
 
 /* For left Content - Navigations */
@@ -348,7 +347,7 @@ body{
     flex-direction: column;
     gap: 5px;
     padding: 10px 0px !important;
-    background-color: rgba(200, 200, 200, 0.2);
+    background-color: var(--bg-Items-Opacity);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(80, 80, 80, 0.6);
 }
@@ -362,28 +361,28 @@ body{
     text-decoration: none;
     color: var(--text-Color-Dark);
     /* background-color: darkseagreen; */
-    padding: 10px 20px;
+    padding: 10px 30px;
     font-size: 1rem;
     font-family: 'Varela Round', sans-serif;
     font-weight: 600;
     display: flex;
     align-items: center;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 .navLinks i{
     width: 40px;
     font-size: 2em;
     line-height: 1em !important;
     color: rgba(34, 226, 162, 0.8);
-    /* background-color: darkgoldenrod; */
 }
 .navLinks p{
     font-size: 1.8em;
     padding: 0px !important;
-    /* background-color: darkcyan; */
     line-height: 1.6em !important;
 }
 .navLinks:hover{
+    transition: 0.1s;
+    border-left: 4px solid var(--primary-Color);
     background-color: rgba(34, 226, 162, 0.2);
 }
 
@@ -399,7 +398,7 @@ body{
     border-radius: 100px;
 }
 .createPostBtn:hover{
-    color: var(--secondary-Color);
+    color: var(--text-Color-Dark);
     background-color: transparent;
     transition: 0.3s ease;
 }
@@ -410,7 +409,7 @@ body{
     font-size: 2rem;
     font-family: 'Tsukimi Rounded', sans-serif;
     border: 2px solid var(--primary-Color);
-    color: var(--secondary-Color);
+    color: var(--text-Color-Dark);
     background-color: transparent;
     font-weight: bold;
     border-radius: 10px;
@@ -439,7 +438,7 @@ body{
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: var(--text-Color-Dark);
+    background-color: var(--bg-Items-Dark);
     border-radius: 8px;
     padding: 0px 20px;
 }
@@ -484,8 +483,8 @@ body{
     color: #dddddd;
 }
 .posting .lowerSection{
-    height: 6vh;
     /* background-color: darkcyan; */
+    padding: 6px 0px !important;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -495,7 +494,7 @@ body{
     align-items: center;
     gap: 8px;
     padding: 4px 10px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-family: 'Tsukimi Rounded', sans-serif;
     border: none;
     color: var(--text-Color-Light);
@@ -508,7 +507,7 @@ body{
     background-color: rgba(200, 200, 200, 0.4);
 }
 .fa-image{
-    color: rgb(0, 255, 170);
+    color: rgb(0, 233, 116);
 }
 .fa-video{
     color: rgb(0, 162, 255);
@@ -538,7 +537,7 @@ body{
     gap: 5px;
     padding: 10px 0px 0px 0px;
     border-radius: 8px;
-    background-color: rgba(200, 200, 200, 0.4);
+    background-color: var(--bg-Items-Opacity);
     position: relative;
 }
 .post .postSaveOrDeleteBtn{
@@ -563,7 +562,8 @@ body{
     /* height: 80%; */
     border-radius: 100%;
     overflow: hidden;
-    background-color: lightblue;
+    border: 2px solid var(--bg-Items-Dark);
+    /* background-color: lightblue; */
 }
 .authorImage img{
     width: 100%;
@@ -590,7 +590,7 @@ body{
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.5px;
-    color: var(--secondary-Color);
+    color: var(--text-Color-Medium);
 }
 
 .post .postContent{
@@ -599,7 +599,7 @@ body{
     flex-direction: column;
     align-items: center;
     /* background-color: #22e2a2; */
-    border-top: 1px solid rgba(190, 190, 190);
+    border-top: 1px solid rgba(200, 200, 200);
 }
 .postContent .postTextArea{
     width: 100%;
@@ -656,7 +656,7 @@ body{
     width: 96%;
     padding: 6px 0px;
     display: flex;
-    border-top: 1px solid rgba(190, 190, 190);
+    border-top: 1px solid rgba(160, 160, 160);
 }
 .likeCommentShareBtns .lkCmntShrBtn{
     width: 33.3%;
@@ -671,13 +671,13 @@ body{
     align-items: center;
     justify-content: center;
     gap: 6px;
-    color: var(--text-Color-Dark);
+    color: var(--text-Color-Medium);
     border-radius: 4px;
     /* background-color: lightcoral; */
 }
 .lkCmntShrBtn:hover{
     transition: 0.1s;
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(230, 230, 230);
 }
 
 /* For Right Content */
@@ -710,6 +710,210 @@ body{
     transition: all 0.3s ease;
 }
 
+/* For Right Content - Messages Section */
+.rightContent .messagesArea{
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--bg-Items);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.messagesArea .messageHeading{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    /* background-color: #00e699; */
+}
+.messageHeading h4{
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+}
+.messageHeading i{
+    font-size: 1.6rem;
+}
+.messagesArea .searchMessage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 30px;
+    background-color: var(--bg-Items-Dark);
+}
+.searchMessage i{
+    font-size: 1.4rem;
+    color: var(--text-Color-Light);
+}
+.searchMessage input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 2px 5px;
+    background-color: transparent;
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-Color-Light);
+    /* background-color: #00e699; */
+}
+.searchMessage input::placeholder{
+    color: var(--bg-Items-Light);
+}
+.searchMessage input::-webkit-search-cancel-button{
+    display: none; 
+}
+
+.messagesArea .msgs_area{
+    width: 100%;
+    padding: 15px 0px;
+    border-top: 2px solid var(--bg-Items-Dark);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: darkcyan; */
+}
+.msgs_area .message{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+    border-radius: 4px;
+}
+.message:hover{
+    transition: 0.2s;
+    background-color: var(--bg-Items-Light);
+}
+.message .msgUserImage{
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid var(--text-Color-Dark);
+    /* background-color: #00e699; */
+}
+.msgUserImage img{
+    width: 100%;
+    /* height: 100%; */
+}
+.message .msgUserText{
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: lightgreen; */
+}
+.msgUserText h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* background-color: darkgoldenrod; */
+}
+.msgUserText p{
+    font-size: 1.1rem;
+    /* background-color: #00e699; */
+}
+
+.rightContent .requestsArea{
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.requestsArea .requestHeading{
+    width: 100%;
+    padding: 5px 0px;
+}
+.requestHeading h4{
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+.requestsArea .rqst_Area{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.rqst_Area .request{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: var(--bg-Items-Light);
+}
+.request .requestDetail{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    /* background-color: lightsalmon; */
+}
+.requestDetail .requestUserImage{
+    width: 43px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid var(--text-Color-Dark);
+    /* background-color: #00e699; */
+}
+.requestUserImage img{
+    width: 100%;
+}
+.requestDetail .requestUserText{
+    width: 90%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: lightgreen; */
+}
+.requestUserText h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-Color-Dark);
+    /* background-color: darkgoldenrod; */
+}
+.requestUserText p{
+    font-size: 1.2rem;
+    color: var(--text-Color-Dark);
+    /* background-color: #00e699; */
+}
+
+.request .requestButtons{
+    width: 100%;
+    display: flex;
+    padding: 10px 5px 5px 5px;
+    /* background-color: #00e699; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.requestButtons .rqstBtns{
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    border-radius: 100px;
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.requestButtons .acceptBtn{
+    color: var(--text-Color-Light);
+    background-color: var(--primary-Color);
+}
+.requestButtons .declineBtn{
+    color: var(--text-Color-Light);
+    background-color: var(--bg-Items-Dark);
+}
+
+
+
 
 /* For Overlay Content */
 #overlay{
@@ -734,7 +938,7 @@ body{
     width: 600px;
     /* height: 400px; */
     border-radius: 8px;
-    background-color: var(--bg-Theme-Light);
+    background-color: var(--bg-Items);
     padding: 0px 20px 20px 20px;
 }
 .postingModal .createPostHeading{
@@ -742,12 +946,11 @@ body{
     padding: 14px 0px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    background-color: #fafafa;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    border-bottom: 2px solid var(--secondary-Color);
+    border-bottom: 2px solid var(--bg-Items-Dark);
 }
 .createPostHeading h2{
     font-size: 2.4rem;
@@ -799,18 +1002,75 @@ body{
 
 .postingModal .modalPostTextarea{
     width: 100%;
-    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    /* background-color: #00e699; */
 }
 .modalPostTextarea .post_Textarea{
     width: 100%;
     min-height: 200px;
     font-family: 'Poppins', sans-serif;
-    padding: 10px 10px;
+    padding: 10px 5px;
     border: none;
     outline: none;
     background-color: transparent;
     font-size: 1.6rem;
-    border-radius: 6px;
+    /* background-color: #00e699; */
+}
+.modalPostTextarea .addEmoji{
+    width: 100%;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background-color: lightblue; */
+}
+.addEmoji .emoji{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.postingModal .modalPostAssets{
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #404040;
+    /* background-color: lightcoral; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modalPostAssets .addToPostText{
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modalPostAssets .addToAsset{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.addToAsset .addMedia{
+    width: 34px;
+    height: 34px;
+    background-color: rgba(200, 200, 200, 0.4);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addMedia label{
+    font-size: 2.2rem;
+}
+.bxs-file-gif{
+    color: rgb(194, 0, 233);
+}
+.addMedia input{
+    display: none;
 }
 
 .postingModal .postingBtn{
