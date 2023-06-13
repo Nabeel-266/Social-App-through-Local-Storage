@@ -94,7 +94,7 @@ multiplePosts.forEach((post) => {
                             </div>
 
                             <div class="postImage">
-                                <img src="../Assets/post_${post.postImage}.jpg" alt="Post_Image" class="img-fluid">
+                                <img src="${post.postImage}" alt="Post_Image" class="img-fluid">
                             </div>
 
                             <div class="postInfo">
@@ -132,10 +132,27 @@ multiplePosts.forEach((post) => {
 })
 
 
+// const addMediaFile = document.querySelectorAll('.addMedia input');
+const postImage = document.querySelector('#postImage');
+const removeMediaBtn = document.querySelector('.removeMediaBtn');
+
+function imagePreview(event) {
+    postImage.classList.remove('hide');
+    postImage.src = URL.createObjectURL(event.target.files[0]);
+    postImageSrc = postImage.src;
+    removeMediaBtn.classList.remove('hide');
+}
+
+removeMediaBtn.addEventListener('click', () => {
+    postImage.src = '';
+    postImage.classList.add('hide');
+    removeMediaBtn.classList.add('hide');
+})
 
 
 // For Post Creation Function
-const postTextArea = document.querySelector('.post_Textarea');
+const postTextArea = document.querySelector('.postTextarea');
+let postImageSrc; 
 
 const postCreation = () => {
 
@@ -145,8 +162,7 @@ const postCreation = () => {
         postingModal.classList.add('hide');
     }
     else {
-
-        let randomImageNum = Math.ceil(Math.random() * 4);
+        // let randomImageNum = Math.ceil(Math.random() * 4);
         // console.log(randomImageNum);
 
         const postInfo = {
@@ -156,7 +172,8 @@ const postCreation = () => {
             postText: postTextArea.value,
             postDate: new Date().toLocaleDateString(),
             postTime: new Date().toLocaleTimeString(),
-            postImage: randomImageNum.toString(),
+            postImage: postImageSrc,
+            // postImage: randomImageNum.toString(),
         };
 
         let post = document.createElement('div');
@@ -183,7 +200,7 @@ const postCreation = () => {
                                 </div>
 
                                 <div class="postImage">
-                                    <img src="../Assets/post_${postInfo.postImage}.jpg" alt="Post_Image" class="img-fluid">
+                                    <img src="${postInfo.postImage}" alt="Post_Image" class="img-fluid">
                                 </div>
 
                                 <div class="postInfo">
@@ -223,13 +240,17 @@ const postCreation = () => {
         localStorage.setItem('Posts', JSON.stringify(multiplePosts));
         
         postTextArea.value = '';
-
+        postImage.src = '';
+        postImage.classList.add('hide');
+        removeMediaBtn.classList.add('hide');
 
         overlay.classList.add('hide');
         postingModal.classList.add('hide');
         
     }
 }
+
+
 
 
 

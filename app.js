@@ -72,13 +72,8 @@ function loginUser() {
             return user.phoneNumber === loginEmailOrPhone.value
         }    
     })
-    // Check! Is user Phone Number match from any Postmate Users Account Phone Number?
-    // const postmateUsersFindLoginPhoneNumber = postmateUsers.filter((user) => {  
-    //     return user.phoneNumber === loginEmailOrPhone.value; 
-    // })
-
-    // console.log(postmateUsersFindLoginEmail);
     // console.log(postmateUsersFind);
+
     if(!postmateUserFind.length){
         return alert('This user is not registered, kindly create an account first');
     }
@@ -93,11 +88,6 @@ function loginUser() {
     else{
         alert('Please! entered a correct Password');
     }
-
-    // Check! Is user Phone Number doesn't match to different users Phone Numbers? 
-    // if(postmateUsersFindPhoneNumber.length) return alert('Sorry! this Phone Number is already has been use in another account')
-
-
 }
 
  

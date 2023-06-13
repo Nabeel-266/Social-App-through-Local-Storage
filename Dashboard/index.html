@@ -432,8 +432,16 @@
                 </div>
             </div>
 
-            <div class="modalPostTextarea">
-                <textarea class="post_Textarea" placeholder="What do you want to talk about?"></textarea>
+            <div class="modalPostContent">
+                <div class="postContent">
+                    <textarea class="postTextarea" placeholder="What do you want to talk about?"></textarea>
+                    <div class="selectMediaFile">
+                        <button type="button" class="removeMediaBtn hide">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <img src="" alt="" id="postImage" class="img-fluid hide">
+                    </div>
+                </div>
                 <div class="addEmoji">
                     <span class="emoji">
                         <i class="fa-regular fa-face-smile"></i>
@@ -448,7 +456,7 @@
                 <div class="addToAsset">
                     <div class="addImage addMedia">
                         <label for="input_Image"><i class="fa-solid fa-image"></i></label>
-                        <input type="file" accept=".jpg, .jpeg, .png" id="input_Image">
+                        <input type="file" accept=".jpg, .jpeg, .png" id="input_Image" onchange="imagePreview(event)">
                     </div>
 
                     <div class="addVideo addMedia">

@@ -1000,7 +1000,7 @@ body{
     font-size: 1.3rem;
 }
 
-.postingModal .modalPostTextarea{
+.postingModal .modalPostContent{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1009,9 +1009,16 @@ body{
     margin-bottom: 10px;
     /* background-color: #00e699; */
 }
-.modalPostTextarea .post_Textarea{
+.modalPostContent .postContent{
     width: 100%;
-    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.postContent .postTextarea{
+    width: 100%;
+    min-height: 120px;
+    max-height: 120px;
     font-family: 'Poppins', sans-serif;
     padding: 10px 5px;
     border: none;
@@ -1020,7 +1027,31 @@ body{
     font-size: 1.6rem;
     /* background-color: #00e699; */
 }
-.modalPostTextarea .addEmoji{
+.postContent .selectMediaFile{
+    width: 100%;
+    max-height: 200px;
+    /* background-color: #00e699; */
+    overflow: auto;
+    position: relative;
+}
+.selectMediaFile .removeMediaBtn{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    padding: 0px 9px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    border-radius: 100%;
+    color: var(--text-Color-Dark);
+    background-color: var(--bg-Items);
+}
+.selectMediaFile img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.modalPostContent .addEmoji{
     width: 100%;
     padding: 5px 0px;
     display: flex;
@@ -1055,16 +1086,21 @@ body{
     gap: 10px;
 }
 .addToAsset .addMedia{
-    width: 34px;
-    height: 34px;
+    padding: 4px 10px;
     background-color: rgba(200, 200, 200, 0.4);
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.addMedia:hover{
+    transition: 0.2s;
+    background-color: rgba(150, 150, 150, 0.4);
+}
 .addMedia label{
+    width: 100%;
     font-size: 2.2rem;
+    cursor: pointer;
 }
 .bxs-file-gif{
     color: rgb(194, 0, 233);
