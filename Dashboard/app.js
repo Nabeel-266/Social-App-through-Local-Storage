@@ -62,10 +62,9 @@ closingPostingModalBtn.addEventListener('click', () => {
 
 
 
-// For Multiple User Posts Array
+// For getting Local Storage Posts Array
 const multiplePosts = JSON.parse(localStorage.getItem('Posts')) || [];
 
-// For getting Local Storage Posts
 const postsArea = document.querySelector('.postsArea');
 
 multiplePosts.forEach((post) => {
@@ -93,8 +92,8 @@ multiplePosts.forEach((post) => {
                                 <p class="postText m-0">${post.postText}</p>
                             </div>
 
-                            <div class="postImage">
-                                <img src="${post.postImage}" alt="Post_Image" class="img-fluid">
+                            <div class="postMedia">
+                                <img src="${post.postImage}" alt="" class="img-fluid">
                             </div>
 
                             <div class="postInfo">
@@ -131,23 +130,32 @@ multiplePosts.forEach((post) => {
     postsArea.prepend(singlePost);
 })
 
-
-// const addMediaFile = document.querySelectorAll('.addMedia input');
-const postImage = document.querySelector('#postImage');
+// For Select File Image Input in Post Modal Media Options
+const selectPostImageInput = document.querySelector('#input_Image');
+const postImageDisplay = document.querySelector('#postImageDisplay');
 const removeMediaBtn = document.querySelector('.removeMediaBtn');
 
-function imagePreview(event) {
-    postImage.classList.remove('hide');
-    postImage.src = URL.createObjectURL(event.target.files[0]);
-    postImageSrc = postImage.src;
-    removeMediaBtn.classList.remove('hide');
-}
+// getting Selected Image URL
+selectPostImageInput.addEventListener("change", () => {
+    const file = selectPostImageInput.files[0];
+    const reader = new FileReader();
 
-removeMediaBtn.addEventListener('click', () => {
-    postImage.src = '';
-    postImage.classList.add('hide');
-    removeMediaBtn.classList.add('hide');
+    reader.addEventListener("load", () => {
+        postImageDisplay.src = reader.result;
+        postImageSrc = postImageDisplay.src;
+    })
+    
+    postImageDisplay.classList.remove('hide');
+    removeMediaBtn.classList.remove('hide');
+    reader.readAsDataURL(file);
 })
+
+// For Cancel Selected Image Btn in Post Modal Image Area
+removeMediaBtn.addEventListener('click', () => {
+    postImageDisplay.src = '';
+    postImageDisplay.classList.add('hide');
+    removeMediaBtn.classList.add('hide');
+});
 
 
 // For Post Creation Function
@@ -162,9 +170,10 @@ const postCreation = () => {
         postingModal.classList.add('hide');
     }
     else {
-        // let randomImageNum = Math.ceil(Math.random() * 4);
+        let randomImageNum = Math.ceil(Math.random() * 4);
+        let randomImage = `../Assets/post_${randomImageNum.toString()}.jpg`;
         // console.log(randomImageNum);
-
+    
         const postInfo = {
             authorName: `${Login_User.firstName} ${Login_User.lastName}`,
             authorEmail: Login_User.emailAddress,
@@ -172,8 +181,7 @@ const postCreation = () => {
             postText: postTextArea.value,
             postDate: new Date().toLocaleDateString(),
             postTime: new Date().toLocaleTimeString(),
-            postImage: postImageSrc,
-            // postImage: randomImageNum.toString(),
+            postImage: postImageSrc || randomImage,
         };
 
         let post = document.createElement('div');
@@ -199,8 +207,8 @@ const postCreation = () => {
                                     <p class="postText m-0">${postInfo.postText}</p>
                                 </div>
 
-                                <div class="postImage">
-                                    <img src="${postInfo.postImage}" alt="Post_Image" class="img-fluid">
+                                <div class="postMedia">
+                                    <img src="${postInfo.postImage}" alt="" class="img-fluid">
                                 </div>
 
                                 <div class="postInfo">
@@ -239,14 +247,14 @@ const postCreation = () => {
         multiplePosts.push(postInfo);
         localStorage.setItem('Posts', JSON.stringify(multiplePosts));
         
-        postTextArea.value = '';
-        postImage.src = '';
-        postImage.classList.add('hide');
-        removeMediaBtn.classList.add('hide');
-
         overlay.classList.add('hide');
         postingModal.classList.add('hide');
-        
+
+        postTextArea.value = '';
+        postImageDisplay.src = '';
+        postImageDisplay.classList.add('hide');
+        removeMediaBtn.classList.add('hide');
+        postImageSrc = '';
     }
 }
 

@@ -14,21 +14,18 @@ if(!Login_User){
 }
 
 // For Logout Buttons
-const logOutBtns = document.querySelectorAll('.logOut');
+const logOutBtn = document.querySelector('.logOut');
 // console.log(logOutBtns);
 
-logOutBtns.forEach((logout) => {
-    logout.addEventListener('click', () => {
-        localStorage.removeItem('Login_User');
-        window.location.href = '../index.html';
-    })
+logOutBtn.addEventListener('click', () => {
+    localStorage.removeItem('Login_User');
+    window.location.href = '../index.html';
 })
+
 
 const userName = document.querySelector('.profileUserName');
 const modalUserName = document.querySelector('.modalUserName');
 const postInput = document.querySelector('.postInput');
-
-console.log(postInput.placeholder)
 
 userName.innerHTML = `${Login_User.firstName} ${Login_User.lastName}`;
 modalUserName.innerHTML = `${Login_User.firstName} ${Login_User.lastName}`;
@@ -52,10 +49,9 @@ closingPostingModalBtn.addEventListener('click', () => {
 
 
 
-// For Multiple User Posts Array
+// For getting Local Storage Posts Array
 const multiplePosts = JSON.parse(localStorage.getItem('Posts')) || [];
 
-// For getting Local Storage Posts
 const postsArea = document.querySelector('.postsArea');
 
 multiplePosts.filter((post) => post.authorEmail === Login_User.emailAddress).forEach((post) => {
@@ -83,8 +79,8 @@ multiplePosts.filter((post) => post.authorEmail === Login_User.emailAddress).for
                                 <p class="postText m-0">${post.postText}</p>
                             </div>
 
-                            <div class="postImage">
-                                <img src="../Assets/post_${post.postImage}.jpg" alt="Post_Image" class="img-fluid">
+                            <div class="postMedia">
+                                <img src="${post.postImage}" alt="" class="img-fluid">
                             </div>
 
                             <div class="postInfo">
@@ -121,11 +117,37 @@ multiplePosts.filter((post) => post.authorEmail === Login_User.emailAddress).for
     postsArea.prepend(singlePost);
 })
 
+// For Select File Image Input in Post Modal Media Options
+const selectPostImageInput = document.querySelector('#input_Image');
+const postImageDisplay = document.querySelector('#postImageDisplay');
+const removeMediaBtn = document.querySelector('.removeMediaBtn');
 
+// getting Selected Image URL
+selectPostImageInput.addEventListener("change", () => {
+    const file = selectPostImageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", () => {
+        postImageDisplay.src = reader.result;
+        postImageSrc = postImageDisplay.src;
+    })
+    
+    postImageDisplay.classList.remove('hide');
+    removeMediaBtn.classList.remove('hide');
+    reader.readAsDataURL(file);
+})
+
+// For Cancel Selected Image Btn in Post Modal Image Area
+removeMediaBtn.addEventListener('click', () => {
+    postImageDisplay.src = '';
+    postImageDisplay.classList.add('hide');
+    removeMediaBtn.classList.add('hide');
+});
 
 
 // For Post Creation Function
-const postTextArea = document.querySelector('.post_Textarea');
+const postTextArea = document.querySelector('.postTextarea');
+let postImageSrc; 
 
 const postCreation = () => {
 
@@ -135,10 +157,10 @@ const postCreation = () => {
         postingModal.classList.add('hide');
     }
     else {
-
         let randomImageNum = Math.ceil(Math.random() * 4);
+        let randomImage = `../Assets/post_${randomImageNum.toString()}.jpg`;
         // console.log(randomImageNum);
-
+    
         const postInfo = {
             authorName: `${Login_User.firstName} ${Login_User.lastName}`,
             authorEmail: Login_User.emailAddress,
@@ -146,7 +168,7 @@ const postCreation = () => {
             postText: postTextArea.value,
             postDate: new Date().toLocaleDateString(),
             postTime: new Date().toLocaleTimeString(),
-            postImage: randomImageNum.toString(),
+            postImage: postImageSrc || randomImage,
         };
 
         let post = document.createElement('div');
@@ -172,8 +194,8 @@ const postCreation = () => {
                                     <p class="postText m-0">${postInfo.postText}</p>
                                 </div>
 
-                                <div class="postImage">
-                                    <img src="../Assets/post_${postInfo.postImage}.jpg" alt="Post_Image" class="img-fluid">
+                                <div class="postMedia">
+                                    <img src="${postInfo.postImage}" alt="" class="img-fluid">
                                 </div>
 
                                 <div class="postInfo">
@@ -212,11 +234,13 @@ const postCreation = () => {
         multiplePosts.push(postInfo);
         localStorage.setItem('Posts', JSON.stringify(multiplePosts));
         
-        postTextArea.value = '';
-
-
         overlay.classList.add('hide');
         postingModal.classList.add('hide');
-        
+
+        postTextArea.value = '';
+        postImageDisplay.src = '';
+        postImageDisplay.classList.add('hide');
+        removeMediaBtn.classList.add('hide');
+        postImageSrc = '';
     }
 }

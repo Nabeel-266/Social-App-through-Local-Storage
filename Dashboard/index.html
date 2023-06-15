@@ -216,7 +216,7 @@
                                 <p class="postText m-0">Welcome To Postmate</p>
                             </div>
 
-                            <div class="postImage">
+                            <div class="postMedia">
                                 <img src="../Assets/post_1.jpg" alt="Post_Image" class="img-fluid">
                             </div>
 
@@ -433,13 +433,14 @@
             </div>
 
             <div class="modalPostContent">
-                <div class="postContent">
+                <div class="postCntnt">
                     <textarea class="postTextarea" placeholder="What do you want to talk about?"></textarea>
                     <div class="selectMediaFile">
                         <button type="button" class="removeMediaBtn hide">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
-                        <img src="" alt="" id="postImage" class="img-fluid hide">
+                        <img src="" alt="" id="postImageDisplay" class="img-fluid hide">
+                        <video src="" id="postVideoDisplay" class="hide" controls></video>
                     </div>
                 </div>
                 <div class="addEmoji">
@@ -456,7 +457,7 @@
                 <div class="addToAsset">
                     <div class="addImage addMedia">
                         <label for="input_Image"><i class="fa-solid fa-image"></i></label>
-                        <input type="file" accept=".jpg, .jpeg, .png" id="input_Image" onchange="imagePreview(event)">
+                        <input type="file" accept=".jpg, .jpeg, .png" id="input_Image">
                     </div>
 
                     <div class="addVideo addMedia">
