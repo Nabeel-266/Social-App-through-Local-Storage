@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&family=Macondo&family=Poppins:wght@200;300;400;500;600;700;800&family=Sacramento&family=Tsukimi+Rounded:wght@300;400;500;600;700&family=Varela+Round&display=swap');
 /* font-family: 'Righteous', cursive; */
 
-:root{
+:root {
     --primary-Color: #22e2a2;
     --secondary-Color: #666666;
     --bg-Theme-Light: #fafafa;
@@ -11,20 +11,22 @@
     --text-Color-Light: #ffffff;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     font-size: 10px;
 }
-body{
+
+body {
     font-family: 'Poppins', sans-serif;
 }
 
 /* Overlay Main Container */
-.overlay_bg{
+.overlay_bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,7 +38,7 @@ body{
 }
 
 /* Main Body Container */
-#main{
+#main {
     width: 100%;
     height: 100vh;
     background-image: url('./Assets/Login-bg.jpg');
@@ -51,7 +53,7 @@ body{
 }
 
 /* Login Form */
-.loginForm{
+.loginForm {
     width: 500px;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
@@ -63,49 +65,56 @@ body{
 }
 
 /* Login Form Header */
-.loginForm .formHeader{
+.loginForm .formHeader {
     width: 100%;
     color: var(--text-Color-Light);
 }
-.formHeader .logo{
+
+.formHeader .logo {
     width: 100%;
     text-align: center;
     padding: 10px 0px;
 }
-.logo i{
+
+.logo i {
     font-size: 3rem;
 }
-.formHeader .heading{
+
+.formHeader .heading {
     width: 100%;
     text-align: center;
 }
-.heading h1{
+
+.heading h1 {
     font-size: 3.4rem;
     font-family: 'K2D', sans-serif;
     padding: 0px 0px 10px 0px;
     border-bottom: 2px solid var(--primary-Color);
 }
-.heading h1 span{
+
+.heading h1 span {
     font-family: 'Macondo', cursive;
     font-weight: bold;
     color: var(--primary-Color);
 }
 
 /* Login Form Body */
-.loginFieldset{
+.loginFieldset {
     padding: 10px 0px;
     color: var(--text-Color-Medium);
     display: flex;
     flex-direction: column;
 }
-.loginFieldset label{
+
+.loginFieldset label {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     font-family: 'K2D', sans-serif;
     margin-top: 10px !important;
 }
-.loginFieldset .inputType{
+
+.loginFieldset .inputType {
     display: block;
     width: 100%;
     border-radius: 4px;
@@ -114,10 +123,12 @@ body{
     display: flex;
     margin: 4px 0px 0px 0px;
 }
-#loginEmailOrPhone{
+
+#loginEmailOrPhone {
     width: 100%;
 }
-.inputType input{
+
+.inputType input {
     width: 90%;
     border: none;
     outline: none;
@@ -127,10 +138,12 @@ body{
     background-color: transparent;
     color: var(--text-Color-Medium);
 }
-.inputType input::placeholder{
+
+.inputType input::placeholder {
     color: #cccccc;
 }
-.inputType span{
+
+.inputType span {
     width: 10%;
     display: flex;
     justify-content: center;
@@ -138,19 +151,21 @@ body{
     color: #cccccc;
     font-size: 1.4rem;
 }
-.inputType:has(input:focus){
+
+.inputType:has(input:focus) {
     box-shadow: 0px 0px 8px var(--primary-Color);
 }
 
 /* for Email and Password Message */
-.emailMessage, .passwordMessage{
+.emailMessage,
+.passwordMessage {
     font-size: 1.5rem;
     font-family: 'K2D', sans-serif;
     color: #ff2a23;
 }
 
 /* For Login Button */
-.logInBtn{
+.logInBtn {
     width: 100%;
     border: none;
     padding: 8px 0px;
@@ -162,13 +177,14 @@ body{
     border-radius: 5px;
     margin-top: 20px;
 }
-.logInBtn:hover{
+
+.logInBtn:hover {
     background-color: rgba(34, 226, 162, 0.8);
     transition: 0.2s;
 }
 
 /* For Forget Button */
-.forgetPassBtn{
+.forgetPassBtn {
     width: 100%;
     border: none;
     padding: 8px 20px;
@@ -180,29 +196,32 @@ body{
     border-radius: 5px;
     margin-top: 10px;
 }
-.forgetPassBtn:hover{
+
+.forgetPassBtn:hover {
     background-color: rgba(34, 226, 162, 0.3);
     transition: 0.2s;
 }
 
 /* For Account Creation Link */
-.creationAccount{
+.creationAccount {
     font-size: 1.7rem;
     font-family: 'K2D', sans-serif;
     margin-top: 30px;
 }
-.creationAccount a{
+
+.creationAccount a {
     color: var(--primary-Color);
     text-decoration: none;
     cursor: pointer;
 }
-.creationAccount a:hover{
+
+.creationAccount a:hover {
     text-decoration: underline;
 }
 
 
 /* Create Account Modal */
-.createAccountModal{
+.createAccountModal {
     width: 600px;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
@@ -216,7 +235,7 @@ body{
 }
 
 /* For Cancel Button */
-.cancelBtn{
+.cancelBtn {
     position: absolute;
     top: 5px;
     right: 8px;
@@ -227,42 +246,50 @@ body{
     outline: none;
     font-size: 2.4rem;
 }
-.cancelBtn i:hover{
+
+.cancelBtn i:hover {
     rotate: 360deg;
     transition: 0.5s ease;
 }
 
 /* Create Account Header */
-.createAccountModal .signUpHeader{
+.createAccountModal .signUpHeader {
     width: 100%;
     color: var(--text-Color-Light);
 }
-.signUpHeader .crteAcntlogo{
+
+.signUpHeader .crteAcntlogo {
     width: 100%;
     text-align: center;
     padding: 5px 0px;
 }
-.crteAcntlogo i{
+
+.crteAcntlogo i {
     font-size: 3rem;
 }
-.signUpHeader .crteAcntHd{
+
+.signUpHeader .crteAcntHd {
     width: 100%;
     text-align: center;
 }
-.crteAcntHd h1{
+
+.crteAcntHd h1 {
     font-size: 3.4rem;
     font-family: 'K2D', sans-serif;
 }
-.crteAcntHd h1 span{
+
+.crteAcntHd h1 span {
     font-family: 'Macondo', cursive;
     font-weight: bold;
     color: var(--primary-Color);
 }
-.signUpHeader .crteAcntHeading{
+
+.signUpHeader .crteAcntHeading {
     width: 100%;
     text-align: center;
 }
-.crteAcntHeading h1{
+
+.crteAcntHeading h1 {
     font-size: 2.6rem;
     font-family: 'K2D', sans-serif;
     padding: 5px 0px;
@@ -270,7 +297,7 @@ body{
 }
 
 /* Create Account Body */
-.signUpFieldset{
+.signUpFieldset {
     padding: 20px 0px;
     color: var(--text-Color-Medium);
     display: flex;
@@ -278,13 +305,14 @@ body{
 }
 
 /* For Signup Name */
-.forName{
+.forName {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
 }
-.forName input{
+
+.forName input {
     width: 48%;
     border: none;
     outline: none;
@@ -295,22 +323,25 @@ body{
     color: var(--text-Color-Medium);
     border-radius: 5px;
 }
-.forName input::placeholder{
+
+.forName input::placeholder {
     font-family: 'Varela Round', sans-serif;
     color: #cccccc;
 }
-.forName input:focus{
+
+.forName input:focus {
     box-shadow: 0px 0px 8px var(--primary-Color);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* For Signup Email */
-.forEmail{
+.forEmail {
     width: 100%;
     display: flex;
     margin-bottom: 15px;
 }
-.forEmail input{
+
+.forEmail input {
     width: 100%;
     border: none;
     outline: none;
@@ -321,22 +352,25 @@ body{
     color: var(--text-Color-Medium);
     border-radius: 5px;
 }
-.forEmail input::placeholder{
+
+.forEmail input::placeholder {
     font-family: 'Varela Round', sans-serif;
     color: #cccccc;
 }
-.forEmail input:focus{
+
+.forEmail input:focus {
     box-shadow: 0px 0px 8px var(--primary-Color);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* For Signup Phone Number */
-.forPhone{
+.forPhone {
     width: 100%;
     display: flex;
     margin-bottom: 15px;
 }
-.forPhone input{
+
+.forPhone input {
     width: 100%;
     border: none;
     outline: none;
@@ -347,34 +381,39 @@ body{
     color: var(--text-Color-Medium);
     border-radius: 5px;
 }
-.forPhone input::placeholder{
+
+.forPhone input::placeholder {
     font-family: 'Varela Round', sans-serif;
     color: #cccccc;
 }
-.forPhone input:focus{
+
+.forPhone input:focus {
     box-shadow: 0px 0px 8px var(--primary-Color);
     background-color: rgba(255, 255, 255, 0.2);
 }
+
 .forPhone input::-webkit-inner-spin-button,
-.forPhone input::-webkit-outer-spin-button{
+.forPhone input::-webkit-outer-spin-button {
     display: none;
 }
 
 /* For Signup Password */
-.forPassword{
+.forPassword {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
 }
-.forPassword .signUpPass{
+
+.forPassword .signUpPass {
     width: 48%;
     display: flex;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     overflow: hidden;
 }
-.signUpPass input{
+
+.signUpPass input {
     width: 90%;
     border: none;
     outline: none;
@@ -385,14 +424,17 @@ body{
     color: var(--text-Color-Medium);
     border-radius: 5px;
 }
-.signUpPass input::placeholder{
+
+.signUpPass input::placeholder {
     font-family: 'Varela Round', sans-serif;
     color: #cccccc;
 }
-.signUpPass:has(input:focus){
+
+.signUpPass:has(input:focus) {
     box-shadow: 0px 0px 8px var(--primary-Color);
 }
-.signUpPass span{
+
+.signUpPass span {
     width: 10%;
     display: flex;
     justify-content: center;
@@ -400,20 +442,22 @@ body{
 }
 
 /* For Signup Date Of Birth */
-.forDateOfBirth{
+.forDateOfBirth {
     width: 100%;
     display: flex;
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
-.forDateOfBirth label{
+
+.forDateOfBirth label {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     font-family: 'K2D', sans-serif;
 }
-.forDateOfBirth input{
+
+.forDateOfBirth input {
     width: 100%;
     border: none;
     outline: none;
@@ -424,31 +468,35 @@ body{
     color: var(--text-Color-Medium);
     border-radius: 5px;
 }
-.forDateOfBirth input::placeholder{
+
+.forDateOfBirth input::placeholder {
     font-family: 'Varela Round', sans-serif;
     color: #cccccc;
 }
-.forDateOfBirth input:focus{
+
+.forDateOfBirth input:focus {
     box-shadow: 0px 0px 8px var(--primary-Color);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 
 /* For Signup Gender */
-.forGender{
+.forGender {
     width: 100%;
     display: flex;
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
-.forGender label{
+
+.forGender label {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     font-family: 'K2D', sans-serif;
 }
-.forGender .gender{
+
+.forGender .gender {
     width: 100%;
     display: flex;
     align-items: center;
@@ -459,19 +507,21 @@ body{
     color: var(--text-Color-Medium);
     border-radius: 5px;
 }
-.gender label{
+
+.gender label {
     margin-right: 40%;
     font-size: 1.8rem;
     font-weight: 500;
     letter-spacing: 1px;
 }
-.gender input[type='radio']:checked{
+
+.gender input[type='radio']:checked {
     accent-color: var(--primary-Color);
     transform: scale(1.4);
     transition: 0.2s;
 }
 
-.signUpBtn{
+.signUpBtn {
     width: 100%;
     border: none;
     padding: 8px 0px;
@@ -482,13 +532,14 @@ body{
     color: var(--text-Color-Light);
     border-radius: 5px;
 }
-.signUpBtn:hover{
+
+.signUpBtn:hover {
     background-color: rgba(34, 226, 162, 0.8);
     transition: 0.2s;
 }
 
 
 /* For Hidden Class */
-.hide{
+.hide {
     display: none;
 }
